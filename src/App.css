@@ -159,6 +159,297 @@ body {
   font-size: 1.3rem;
 }
 
+/* Course Search */
+.course-search {
+  margin-bottom: 16px;
+}
+
+.course-search-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.search-loader {
+  position: absolute;
+  right: 10px;
+  color: var(--accent-green);
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding: 10px 36px 10px 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.search-input-wrapper input:focus {
+  outline: none;
+  border-color: var(--accent-green);
+}
+
+.search-results {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  margin-top: 4px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.search-result {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result:hover {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.result-name {
+  font-weight: 500;
+}
+
+.result-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.selected-course {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-card);
+  border: 1px solid var(--accent-green);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+
+.selected-course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.selected-course-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.selected-course-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.selected-course-detail {
+  color: var(--accent-green);
+  font-size: 0.78rem;
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-icon:hover {
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.05);
+}
+
+.btn-icon:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.btn-text {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 0;
+}
+
+.btn-text:hover {
+  color: var(--accent-green);
+}
+
+.custom-course-form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.custom-course-form input,
+.custom-course-form select {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+.custom-course-form input {
+  flex: 1;
+}
+
+/* Hole Navigator */
+.hole-navigator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hole-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.hole-number {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent-green);
+}
+
+.hole-detail {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.hole-shots-count {
+  font-size: 0.75rem;
+  color: var(--accent-blue);
+}
+
+/* Mini Scorecard */
+.hole-scorecard-mini {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.scorecard-hole {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  padding: 4px 2px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: all 0.15s;
+}
+
+.scorecard-hole.active {
+  border-color: var(--accent-green);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.scorecard-hole.played {
+  color: var(--text-primary);
+}
+
+.scorecard-hole.over .sc-hole-score { color: var(--accent-red); }
+.scorecard-hole.under .sc-hole-score { color: var(--accent-green); }
+.scorecard-hole.even .sc-hole-score { color: var(--accent-yellow); }
+
+.sc-hole-num {
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.sc-hole-par {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+}
+
+.sc-hole-score {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.shots-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.shots-summary h4 {
+  color: var(--text-primary);
+}
+
+.shots-summary span {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.more-shots {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  padding: 6px;
+}
+
 /* Shot Logger */
 .logger-form {
   background: var(--bg-secondary);
